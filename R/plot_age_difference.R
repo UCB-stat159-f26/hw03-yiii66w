@@ -5,6 +5,7 @@
 #' @param matches A data frame returned by `get_career_data()`.
 #' @return A ggplot object.
 #' @export
+#' @importFrom rlang .data
 #' @examples
 #' matches <- data.frame(
 #'   player_age = c(20, 21),
@@ -12,12 +13,12 @@
 #'   result = c("W", "L")
 #' )
 #' plot_age_difference(matches)
-
 plot_age_difference <- function(matches) {
-  ggplot2::ggplot(
-    matches,
-    ggplot2::aes(x = player_age, y = age_difference, color = result)
-  ) +
+  ggplot2::ggplot(matches, ggplot2::aes(
+    x = .data$player_age,
+    y = .data$age_difference,
+    color = .data$result
+  )) +
     ggplot2::geom_hline(yintercept = 0, color = "grey50") +
     ggplot2::geom_point(size = 1.5, alpha = 0.8) +
     ggplot2::scale_color_manual(
