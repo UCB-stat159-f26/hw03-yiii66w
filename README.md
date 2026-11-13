@@ -28,4 +28,4 @@ In HW2, my goal was to recreate a specific plot using Serena Williams’s match 
 
 ## AI Use
 
-I used ChatGPT (Codex) to review the R packaging lecture slides, get help drafting steps of the R code, and clarify concepts like Roxygen and NAMESPACE.
+I used ChatGPT (6.1) to review the lecture slides, draft steps of homework3, and understand concepts like Roxygen and `NAMESPACE`. My main prompts were to walk me through the lecture slides, help fix bugs and offline tests, and explain the documentation tags.
