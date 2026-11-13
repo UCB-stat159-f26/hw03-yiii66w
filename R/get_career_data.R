@@ -41,6 +41,19 @@ get_player_birth_date <- function(id, site) {
   stop("Could not read the birth date for ", id, ".", call. = FALSE)
 }
 
+#' @title Get Tennis Career Match Data
+#' @description Downloads and cleans a player's career match records from Tennis Abstract.
+#' @param player A character string giving the player's full name, such as
+#'   "Serena Williams" or "SerenaWilliams".
+#' @return A data frame with one row per match and three columns:
+#'   `player_age` (the player's age in years), `age_difference` (the player's
+#'   age minus the opponent's age in years), and `result` ("W" or "L").
+#' @export
+#' @examples
+#' \dontrun{
+#' get_career_data("Serena Williams")
+#' }
+
 get_career_data <- function(player) {
   site <- "https://www.tennisabstract.com"
   career <- find_player_career(player, site)

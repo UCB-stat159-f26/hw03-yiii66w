@@ -1,3 +1,18 @@
+#' @title Plot Match Age Differences
+#' @description Creates a scatter plot with the player's age on the x-axis
+#'   and the player-minus-opponent age difference on the y-axis.
+#'   Point colors indicate wins and losses.
+#' @param matches A data frame returned by `get_career_data()`.
+#' @return A ggplot object.
+#' @export
+#' @examples
+#' matches <- data.frame(
+#'   player_age = c(20, 21),
+#'   age_difference = c(-2, 1),
+#'   result = c("W", "L")
+#' )
+#' plot_age_difference(matches)
+
 plot_age_difference <- function(matches) {
   ggplot2::ggplot(
     matches,
